@@ -1,0 +1,82 @@
+/* tailwind-style.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  html {
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+@layer components {
+  .container-checklist {
+    @apply relative w-[850px] h-[550px] bg-white rounded-xl shadow-lg overflow-hidden m-5;
+  }
+
+  .form-box {
+    @apply absolute top-0 right-0 w-1/2 h-full bg-white flex items-center text-center text-gray-800 p-10 transition-all duration-700 ease-in-out;
+  }
+
+  .form-box.question {
+    @apply flex-col justify-center items-center overflow-y-auto p-5;
+  }
+
+  .input-box input,
+  #outroTextoContainer input {
+    @apply w-full py-3 px-5 bg-gray-100 rounded-lg border-none outline-none text-base text-gray-800 font-medium placeholder-gray-500;
+  }
+
+  .custom-upload-button {
+    @apply bg-gray-200 border border-gray-300 px-4 py-2 rounded cursor-pointer inline-block font-semibold mt-4 hover:bg-gray-300;
+  }
+
+  .btn {
+    @apply w-full h-12 bg-gray-900 rounded-lg text-white font-semibold text-base hover:bg-lime-400 hover:text-black transition-all duration-300;
+  }
+
+  .toggle-panel {
+    @apply absolute w-1/2 h-full bg-cover bg-center transition-all ease-in-out overflow-hidden flex justify-center items-center text-center px-5;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/img/lancheira2.jpg');
+  }
+
+  .toggle-panel h1 {
+    @apply text-lime-400 text-2xl animate-float font-semibold;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-30px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .progress-bar::after {
+    @apply absolute top-0 left-0 h-full bg-lime-400;
+  }
+
+  .progress-text {
+    @apply text-right text-xs text-gray-600 font-medium mt-1;
+  }
+
+  .input-box-radio label,
+  .input-box-checkbox select {
+    @apply block my-2 text-sm text-gray-700;
+  }
+
+  .select-option {
+    @apply w-full max-w-xs px-4 py-2 border border-gray-300 rounded-md bg-white text-gray-700 text-sm focus:outline-none focus:ring-2 focus:ring-lime-400;
+  }
+}
+
+@layer utilities {
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+}
